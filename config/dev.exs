@@ -7,7 +7,12 @@ use Mix.Config
 # watchers to your application. For example, we use it
 # with webpack to recompile .js and .css sources.
 config :yolo_example, YoloExampleWeb.Endpoint,
-  http: [port: 4000],
+  https: [
+    port: 4000,
+    otp_app: :yolo_example,
+    keyfile: Path.expand("priv/certs/dev.key"),
+    certfile: Path.expand("priv/certs/dev.crt")
+  ],
   debug_errors: true,
   code_reloader: true,
   check_origin: false,
