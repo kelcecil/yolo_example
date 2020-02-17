@@ -83,7 +83,7 @@ defmodule YoloExample.Worker do
     end)
   end
 
-  def await(image_id, timeout \\ 5_000) do
+  def await(image_id, timeout \\ 10_000) do
     receive do
       {:detected, ^image_id, result} -> result
     after

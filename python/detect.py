@@ -1,7 +1,7 @@
 import os
 import numpy as np
 import cv2, sys
-import cvlib
+import cvlib as cv
 import json
 
 from struct import unpack, pack
