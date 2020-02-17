@@ -3,6 +3,7 @@ defmodule YoloExampleWeb.UserSocket do
 
   ## Channels
   # channel "room:*", YoloExampleWeb.RoomChannel
+  channel "webcam:*", YoloExampleWeb.WebcamChannel
 
   # Socket params are passed from the client and can
   # be used to verify and authenticate a user. After
