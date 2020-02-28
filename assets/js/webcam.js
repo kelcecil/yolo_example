@@ -26,8 +26,8 @@ const boxColor = "blue";
 const fontSize = 18;
 
 const capture = () => {
-    Webcam.snap((dataUri, canvas, contesxt) => {
-        channel.push("frame", { "frame": data_uri });
+    Webcam.snap((dataUri, canvas, context) => {
+        channel.push("frame", { "frame": dataUri });
     });
 };
 
@@ -51,17 +51,17 @@ channel.on("detected", drawObjects);
 
 const FPS = 1;
 let intervalID = null;
+let startStopButton = document.getElementById("start_stop")
 
-document.getElementById("start_stop")
-        .addEventListener("click", () => {
-            if (intervalID == null) {
-                intervalID = setInterval(capture, 1000/FPS);
-                this.textContent = "Stop";
-            } else {
-                clearInterval(intervalID);
-                intervalID = null;
-                this.textContent = "Start";
-            }
-        });
+startStopButton.addEventListener("click", () => {
+    if (intervalID == null) {
+        intervalID = setInterval(capture, 1000/FPS);
+        startStopButton.textContent = "Stop";
+    } else {
+        clearInterval(intervalID);
+        intervalID = null;
+        startStopButton.textContent = "Start";
+    }
+});
 
-export default Socket;
+export default socket;
