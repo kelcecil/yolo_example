@@ -40,8 +40,6 @@ defmodule YoloExampleWeb.WebcamChannel do
     socket
     |> assign(:current_image_id, image_id)
     |> assign(:latest_frame, nil)
-
-    {:noreply, socket}
   end
 
   defp handle_detected(result, socket) do
