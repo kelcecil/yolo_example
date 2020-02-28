@@ -8,10 +8,10 @@ use Mix.Config
 # with webpack to recompile .js and .css sources.
 config :yolo_example, YoloExampleWeb.Endpoint,
   https: [
-    port: 4000,
-    otp_app: :yolo_example,
-    keyfile: Path.expand("priv/certs/dev.key"),
-    certfile: Path.expand("priv/certs/dev.crt")
+    port: 4001,
+    cipher_suite: :strong,
+    keyfile: "priv/cert/selfsigned_key.pem",
+    certfile: "priv/cert/selfsigned.pem"
   ],
   debug_errors: true,
   code_reloader: true,
