@@ -49,7 +49,7 @@ const drawObjects = (result) => {
 
 channel.on("detected", drawObjects);
 
-const FPS = 1;
+const FPS = 20;
 let intervalID = null;
 let startStopButton = document.getElementById("start_stop")
 
